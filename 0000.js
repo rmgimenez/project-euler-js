@@ -25,4 +25,17 @@ module.exports = {
       return !encontrouDivisor;
     }
   },
+
+  isPalindrome: function (valor) {
+    valor = valor + '';
+    valor = valor.split('');
+
+    let contrario = '';
+
+    for (let i = valor.length - 1; i >= 0; i--) {
+      contrario += valor[i];
+    }
+
+    console.log(contrario);
+  },
 };
