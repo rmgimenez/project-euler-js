@@ -51,9 +51,45 @@ numeros = numeros.split('\n');
 
 let matriz = [];
 
+// monta a matriz com os números
+// 50 números por linha
+// 20 linhas
 for (let i = 0; i < numeros.length; i++) {
   linha = numeros[i];
   matriz.push((linha + '').split(''));
 }
 
-console.log(matriz[0][0]);
+let valorCalculado = 1;
+let maiorValor = 0;
+
+// passa pelas linhas
+for (let i = 0; i < 20; i++) {
+  // percorre os registros das linhas
+  for (let j = 0; j < 7; j++) {
+    valorCalculado = 1;
+    for (let k = 0; k < 13; k++) {
+      valorCalculado *= matriz[i][j + k];
+    }
+
+    if (valorCalculado > maiorValor) {
+      maiorValor = valorCalculado;
+    }
+  }
+}
+
+// passa pelas colunas
+for (let i = 0; i < 50; i++) {
+  // percorre os registros das linhas
+  for (let j = 0; j < 37; j++) {
+    valorCalculado = 1;
+    for (let k = 0; k < 3; k++) {
+      valorCalculado *= matriz[j + k][i];
+    }
+
+    if (valorCalculado > maiorValor) {
+      maiorValor = valorCalculado;
+    }
+  }
+}
+
+console.log('maiorValor', maiorValor);
