@@ -27,6 +27,7 @@ module.exports = {
   },
 
   isPalindrome: function (valor) {
+    original = valor;
     valor = valor + '';
     valor = valor.split('');
 
@@ -36,6 +37,6 @@ module.exports = {
       contrario += valor[i];
     }
 
-    console.log(contrario);
+    return original == contrario;
   },
 };
