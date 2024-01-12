@@ -13,6 +13,12 @@ function quantidadeDeVezesNumeroPossuiDigito(numero, digito) {
 }
 
 function verificaSeNumeroPandigital(numero) {
+  const checaNumero0 = quantidadeDeVezesNumeroPossuiDigito(numero, 0);
+
+  if (checaNumero0 > 0) {
+    return false;
+  }
+
   const checaNumero1 = quantidadeDeVezesNumeroPossuiDigito(numero, 1);
   const checaNumero2 = quantidadeDeVezesNumeroPossuiDigito(numero, 2);
   const checaNumero3 = quantidadeDeVezesNumeroPossuiDigito(numero, 3);
@@ -40,8 +46,10 @@ function verificaSeNumeroPandigital(numero) {
   }
 }
 
-for (let i = 100000000; i < 1000000000; i++) {
-  if (verificaSeNumeroPandigital(i)) {
-    console.log(i);
+for (let i = 2; i < 100; i++) {
+  const numeroGerado = '' + i * 1 + i * 2 + i * 3 + i * 4 + i * 5 + i * 6 + i * 7 + i * 8 + i * 9;
+
+  if (verificaSeNumeroPandigital(numeroGerado)) {
+    console.log(numeroGerado);
   }
 }
