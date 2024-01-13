@@ -10,7 +10,7 @@ Find the product abc.
 
 // trinagulo 3, 4 e 5
 
-limite = 1000;
+let limite = 1000;
 
 function encontraHipotenusa(a, b) {
   return Math.sqrt(a * a + b * b);

@@ -3,14 +3,14 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that 
 
 What is the 10 001st prime number?
 */
-const funcoes = require('./0000');
+import { isPrimeRMG } from './0000.js';
 
 let encontrou = false;
 let contador = 2;
 let primosEncontrados = 0;
 
 while (encontrou == false) {
-  if (funcoes.isPrime(contador)) {
+  if (isPrimeRMG(contador)) {
     primosEncontrados++;
     if (primosEncontrados == 10001) {
       console.log(contador);

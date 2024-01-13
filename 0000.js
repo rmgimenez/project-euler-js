@@ -40,7 +40,7 @@ const isPrimeRMG = function (num) {
 };
 
 const isPalindrome = function (valor) {
-  original = valor;
+  const original = valor;
   valor = valor + '';
   valor = valor.split('');
 
@@ -53,15 +53,51 @@ const isPalindrome = function (valor) {
   return original == contrario;
 };
 
-module.exports = {
+function decomporNumero(numero) {
+  let restoParaDecompor = numero;
+
+  if (isPrime(numero)) {
+    return [1, numero];
+  }
+
+  let divisores = [];
+  let n = 2;
+  while (restoParaDecompor > 1) {
+    if (isPrime(n)) {
+      while (restoParaDecompor % n == 0) {
+        restoParaDecompor = restoParaDecompor / n;
+        divisores.push(n);
+      }
+    }
+    n++;
+  }
+
+  return divisores;
+}
+
+function divisoresDeUmNumero(numero) {
+  let divisores = [];
+  divisores.push(1);
+
+  for (let i = 2; i <= numero / 2; i++) {
+    if (numero % i == 0) {
+      divisores.push(i);
+    }
+  }
+
+  divisores.push(numero);
+
+  return divisores;
+}
+
+export {
   /*
   Calcula a sequência de fibonacci
   */
   fibonacci,
-
   isPrime,
-
   isPrimeRMG,
-
   isPalindrome,
+  divisoresDeUmNumero,
+  decomporNumero,
 };

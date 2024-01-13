@@ -8,14 +8,14 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 somas dos valores pares
 */
 
-var funcoes = require('./0000');
+import { fibonacci } from './0000.js';
 
 let soma = 0;
 let valor = 0;
 let sequencia = 1;
 
 while (valor < 4000000) {
-  valor = funcoes.fibonacci(sequencia);
+  valor = fibonacci(sequencia);
   if (valor < 4000000 && valor % 2 === 0) {
     soma += valor;
   }
