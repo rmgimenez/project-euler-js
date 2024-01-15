@@ -1,55 +1,31 @@
-function quantidadeDeVezesNumeroPossuiDigito(numero, digito) {
-  let digitosDoNumero = ('' + numero).split('');
+/*
+Project Euler problem 38
+*/
+import { verificaSeNumeroPandigital } from './0000.js';
 
-  let quantidadeDeVezes = 0;
+function problema38() {
+  let maxPandigital = 0;
 
-  digitosDoNumero.forEach((n) => {
-    if (n == digito) {
-      quantidadeDeVezes++;
+  for (let n = 1; n < 10000; n++) {
+    let concatenatedProduct = '';
+
+    for (let i = 1; i <= 9; i++) {
+      concatenatedProduct += (n * i).toString();
+
+      // Se a string resultante for maior que 9 dígitos, pare o loop interno
+      if (concatenatedProduct.length > 9) {
+        break;
+      }
+
+      if (concatenatedProduct.length === 9 && verificaSeNumeroPandigital(concatenatedProduct)) {
+        // Se a string for pandigital, atualize o máximo encontrado
+        maxPandigital = Math.max(maxPandigital, parseInt(concatenatedProduct, 10));
+      }
     }
-  });
-
-  return quantidadeDeVezes;
-}
-
-function verificaSeNumeroPandigital(numero) {
-  const checaNumero0 = quantidadeDeVezesNumeroPossuiDigito(numero, 0);
-
-  if (checaNumero0 > 0) {
-    return false;
   }
 
-  const checaNumero1 = quantidadeDeVezesNumeroPossuiDigito(numero, 1);
-  const checaNumero2 = quantidadeDeVezesNumeroPossuiDigito(numero, 2);
-  const checaNumero3 = quantidadeDeVezesNumeroPossuiDigito(numero, 3);
-  const checaNumero4 = quantidadeDeVezesNumeroPossuiDigito(numero, 4);
-  const checaNumero5 = quantidadeDeVezesNumeroPossuiDigito(numero, 5);
-  const checaNumero6 = quantidadeDeVezesNumeroPossuiDigito(numero, 6);
-  const checaNumero7 = quantidadeDeVezesNumeroPossuiDigito(numero, 7);
-  const checaNumero8 = quantidadeDeVezesNumeroPossuiDigito(numero, 8);
-  const checaNumero9 = quantidadeDeVezesNumeroPossuiDigito(numero, 9);
-
-  if (
-    checaNumero1 == 1 &&
-    checaNumero2 == 1 &&
-    checaNumero3 == 1 &&
-    checaNumero4 == 1 &&
-    checaNumero5 == 1 &&
-    checaNumero6 == 1 &&
-    checaNumero7 == 1 &&
-    checaNumero8 == 1 &&
-    checaNumero9 == 1
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+  console.log('Maior número pandigital:', maxPandigital);
 }
 
-for (let i = 2; i < 10000; i++) {
-  const numeroGerado = '' + i * 1 + i * 2 + i * 3 + i * 4 + i * 5 + i * 6 + i * 7 + i * 8 + i * 9;
-
-  if (verificaSeNumeroPandigital(numeroGerado)) {
-    console.log(numeroGerado);
-  }
-}
+// Chame a função para resolver o problema
+problema38();
