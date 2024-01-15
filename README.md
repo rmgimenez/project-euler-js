@@ -24,3 +24,8 @@ Os nomes dos arquivos serão no formato "0000.js". Sendo 4 dígitos para o núme
 | 0012     | Em andamento |
 | 0013     | Em andamento |
 | 0024     | Resolvido    |
+| 0028     | Resolvido    |
+| 0030     | Resolvido    |
+| 0038     | Em andamento |
+| 0040     | Resolvido    |
+| 0042     | Resolvido    |

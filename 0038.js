@@ -46,7 +46,7 @@ function verificaSeNumeroPandigital(numero) {
   }
 }
 
-for (let i = 2; i < 100; i++) {
+for (let i = 2; i < 10000; i++) {
   const numeroGerado = '' + i * 1 + i * 2 + i * 3 + i * 4 + i * 5 + i * 6 + i * 7 + i * 8 + i * 9;
 
   if (verificaSeNumeroPandigital(numeroGerado)) {
