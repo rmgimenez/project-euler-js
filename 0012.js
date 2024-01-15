@@ -17,7 +17,7 @@ We can see that 28 is the first triangle number to have over five divisors.
 
 What is the value of the first triangle number to have over five hundred (500) divisors?
 */
-import { decomporNumero, isPrime } from './funcoes.js';
+import { decomporNumero, isPrime } from './0000.js';
 
 const qtdDivisoresEncontrar = 500;
 

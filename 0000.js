@@ -90,6 +90,13 @@ function divisoresDeUmNumero(numero) {
   return divisores;
 }
 
+function factorial(num) {
+  if (num <= 1) {
+    return 1;
+  }
+  return num * factorial(num - 1);
+}
+
 export {
   /*
   Calcula a sequência de fibonacci
@@ -100,4 +107,5 @@ export {
   isPalindrome,
   divisoresDeUmNumero,
   decomporNumero,
+  factorial,
 };

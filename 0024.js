@@ -12,6 +12,8 @@ What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 
 
 */
 
+import { factorial } from './0000.js';
+
 function nthLexicographicPermutation(elements, n) {
   let result = [];
   n--; // Ajuste para indexação base 0
@@ -23,14 +25,6 @@ function nthLexicographicPermutation(elements, n) {
   }
 
   return result;
-}
-
-// Função para calcular o fatorial
-function factorial(num) {
-  if (num <= 1) {
-    return 1;
-  }
-  return num * factorial(num - 1);
 }
 
 let elements = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
