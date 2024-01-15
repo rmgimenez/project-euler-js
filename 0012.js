@@ -17,29 +17,35 @@ We can see that 28 is the first triangle number to have over five divisors.
 
 What is the value of the first triangle number to have over five hundred (500) divisors?
 */
-import { decomporNumero, isPrime } from './0000.js';
+let utimoNumeroSomado = 0;
+let numeroAtual = 0;
 
-const qtdDivisoresEncontrar = 500;
-
-let qtdDivisores = [];
-let numero = 0;
-let encontrou = false;
-
-const matrizPrimos = [];
-for (let i = 1; i < 65500; i++) {
-  if (isPrime(i)) {
-    matrizPrimos.push(i);
-  }
+function gerarProximoNumero() {
+  numeroAtual++;
+  utimoNumeroSomado += numeroAtual;
+  return utimoNumeroSomado;
 }
 
-// for (let i = 1; encontrou == false; i++) {
-//   numero += i;
-//   qtdDivisores = decomporNumero(numero);
+// função que retorna a quantidade de divisores de um número
+function quantidadeDeDivisores(numero) {
+  let divisores = [];
 
-//   if (qtdDivisores.length == qtdDivisoresEncontrar) {
-//     console.log('Resultado = ', numero);
-//     encontrou = true;
-//   }
-// }
+  for (let i = 2; i <= numero / 2; i++) {
+    if (numero % i == 0) {
+      divisores.push(i);
+    }
+  }
 
-console.log(decomporNumero(28));
+  divisores.push(numero);
+
+  return divisores.length;
+}
+
+let encontrou = false;
+while (encontrou == false) {
+  gerarProximoNumero();
+  if (quantidadeDeDivisores(utimoNumeroSomado) >= 500) {
+    encontrou = true;
+    console.log(utimoNumeroSomado);
+  }
+}
