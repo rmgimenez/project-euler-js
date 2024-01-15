@@ -22,7 +22,7 @@ Os nomes dos arquivos serão no formato "0000.js". Sendo 4 dígitos para o núme
 | 0010     | Resolvido    |
 | 0011     | Resolvido    |
 | 0012     | Resolvido    | Está demorando muito (253 segundos) |
-| 0013     | Em andamento |
+| 0013     | Resolvido    |
 | 0024     | Resolvido    |
 | 0028     | Resolvido    |
 | 0030     | Resolvido    |
