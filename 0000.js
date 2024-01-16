@@ -111,6 +111,12 @@ function quantidadeDeVezesNumeroPossuiDigito(numero, digito) {
   return quantidadeDeVezes;
 }
 
+// função mais simples para verificar se um número é pandigital
+export function isPandigital(numero) {
+  const sortedIdentity = numero.toString().split('').sort().join('');
+  return sortedIdentity === '123456789';
+}
+
 function verificaSeNumeroPandigital(numero) {
   const checaNumero0 = quantidadeDeVezesNumeroPossuiDigito(numero, 0);
 

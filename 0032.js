@@ -8,14 +8,30 @@ Find the sum of all products whose multiplicand/multiplier/product identity can 
 
 HINT: Some products can be obtained in more than one way so be sure to only include it once in your sum.
 */
-import { verificaSeNumeroPandigital } from './0000.js';
+import { isPandigital } from './0000.js';
 
-let arrayDeNumerosPandigitais = [];
+let somaDosNumerosPandigitais = 0;
 
-for (let i = 123456789; i <= 987654321; i++) {
-  if (verificaSeNumeroPandigital(i)) {
-    arrayDeNumerosPandigitais.push(i);
+for (let i = 1; i < 10000; i++) {
+  for (let j = i + 1; j < 10000; j++) {
+    const produto = i * j;
+    const numero = `${i}${j}${produto}`;
+
+    // para o for se o tamanho do número for maior que 9
+    if (numero.length > 9) {
+      break;
+    }
+
+    // passa para o próximo loop se o tamanho do número for menor que 9
+    if (numero.length < 9) {
+      continue;
+    }
+
+    if (isPandigital(numero)) {
+      console.log(`${i} x ${j} = ${produto} ===== ${numero}`);
+      somaDosNumerosPandigitais += produto;
+    }
   }
 }
 
-console.log(arrayDeNumerosPandigitais.length);
+console.log('Resposta', somaDosNumerosPandigitais);

@@ -4,7 +4,9 @@ Nesse reposítório pretendo resolver problemas do site [Project Euler](https://
 
 Vou resolver os problemas utilizando javascript. Cada arquivo representará um problema do site.
 
-Os nomes dos arquivos serão no formato "0000.js". Sendo 4 dígitos para o número do problema. Por exemplo, o problema 30 estará no arquivo 0030.js.
+Os nomes dos arquivos serão no formato "XXXX.js". Sendo 4 dígitos para o número do problema. Por exemplo, o problema 30 estará no arquivo 0030.js.
+
+O arquivo 0000.js contem funções que utilizo em vários lugares. Para não ficar repetindo, coloquei nesse arquivo.
 
 # Situação dos problemas
 
