@@ -10,7 +10,7 @@ HINT: Some products can be obtained in more than one way so be sure to only incl
 */
 import { isPandigital } from './0000.js';
 
-let somaDosNumerosPandigitais = 0;
+const productsSet = new Set();
 
 for (let i = 1; i < 10000; i++) {
   for (let j = i + 1; j < 10000; j++) {
@@ -28,10 +28,12 @@ for (let i = 1; i < 10000; i++) {
     }
 
     if (isPandigital(numero)) {
-      console.log(`${i} x ${j} = ${produto} ===== ${numero}`);
-      somaDosNumerosPandigitais += produto;
+      productsSet.add(+produto);
     }
   }
 }
 
-console.log('Resposta', somaDosNumerosPandigitais);
+console.log(
+  'Resposta',
+  Array.from(productsSet).reduce((sum, product) => sum + product, 0)
+);
