@@ -28,7 +28,7 @@ O arquivo 0000.js contem funções que utilizo em vários lugares. Para não fic
 | 0014     | Resolvido    |
 | 0015     | Resolvido    |
 | 0016     | Resolvido    |
-| 0016     | Em andamento |
+| 0017     | Em andamento |
 | 0024     | Resolvido    |
 | 0028     | Resolvido    |
 | 0030     | Resolvido    |
