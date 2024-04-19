@@ -6,61 +6,171 @@ Contar as letras utilizadas para escrever os número de 1 a 1000 no idioma ingl�
 
 const limite = 1000;
 
-let result = 0;
-
-for (let i = 1; i <= limite; i++) {
-  if (i == 1 || i == 2 || i == 6) {
-    result += 3;
-  } else if (i == 3 || i == 7 || i == 8) {
-    result += 5;
-  } else if (i == 4 || i == 5 || i == 9) {
-    result += 4;
-  }
-}
-
+// retorna o número por escrito no idioma inglês
 function escreveNumeroEmIngles(numero) {
   if (numero == 1000) {
     return 'one thousand';
   } else if (Math.floor(numero / 100) == 1) {
     return 'one hundred';
-  }
-}
+  } else if (numero >= 20 && numero < 100) {
+    let tens = Math.floor(numero / 10);
+    let units = numero % 10;
+    let tensWord = '';
+    let unitsWord = '';
 
-// retorna o número por escrito no idioma inglês
-function numeroPorEscrito(numero) {
-  let numeroPorEscrito = '';
-  if (numero == 1) {
-    numeroPorEscrito = 'one';
-  } else if (numero == 2) {
-    numeroPorEscrito = 'two';
-  } else if (numero == 3) {
-    numeroPorEscrito = 'three';
-  } else if (numero == 4) {
-    numeroPorEscrito = 'four';
-  } else if (numero == 5) {
-    numeroPorEscrito = 'five';
-  } else if (numero == 6) {
-    numeroPorEscrito = 'six';
-  } else if (numero == 7) {
-    numeroPorEscrito = 'seven';
-  } else if (numero == 8) {
-    numeroPorEscrito = 'eight';
-  } else if (numero == 9) {
-    numeroPorEscrito = 'nine';
-  }
+    if (tens == 2) {
+      tensWord = 'twenty';
+    } else if (tens == 3) {
+      tensWord = 'thirty';
+    } else if (tens == 4) {
+      tensWord = 'forty';
+    } else if (tens == 5) {
+      tensWord = 'fifty';
+    } else if (tens == 6) {
+      tensWord = 'sixty';
+    } else if (tens == 7) {
+      tensWord = 'seventy';
+    } else if (tens == 8) {
+      tensWord = 'eighty';
+    } else if (tens == 9) {
+      tensWord = 'ninety';
+    }
 
-  return numeroPorEscrito;
-}
+    if (units == 1) {
+      unitsWord = 'one';
+    } else if (units == 2) {
+      unitsWord = 'two';
+    } else if (units == 3) {
+      unitsWord = 'three';
+    } else if (units == 4) {
+      unitsWord = 'four';
+    } else if (units == 5) {
+      unitsWord = 'five';
+    } else if (units == 6) {
+      unitsWord = 'six';
+    } else if (units == 7) {
+      unitsWord = 'seven';
+    } else if (units == 8) {
+      unitsWord = 'eight';
+    } else if (units == 9) {
+      unitsWord = 'nine';
+    }
 
-// conta quantas letras em uma plavra não levando em consideração os espaçoes e os hifens
-function contaLetras(palavra) {
-  let contador = 0;
-  for (let i = 0; i < palavra.length; i++) {
-    if (palavra[i] != ' ' && palavra[i] != '-') {
-      contador++;
+    return tensWord + ' ' + unitsWord;
+  } else if (numero >= 10 && numero < 20) {
+    let units = numero % 10;
+    let unitsWord = '';
+
+    if (units == 0) {
+      unitsWord = 'ten';
+    } else if (units == 1) {
+      unitsWord = 'eleven';
+    } else if (units == 2) {
+      unitsWord = 'twelve';
+    } else if (units == 3) {
+      unitsWord = 'thirteen';
+    } else if (units == 4) {
+      unitsWord = 'fourteen';
+    } else if (units == 5) {
+      unitsWord = 'fifteen';
+    } else if (units == 6) {
+      unitsWord = 'sixteen';
+    } else if (units == 7) {
+      unitsWord = 'seventeen';
+    } else if (units == 8) {
+      unitsWord = 'eighteen';
+    } else if (units == 9) {
+      unitsWord = 'nineteen';
+    }
+
+    return unitsWord;
+  } else {
+    let units = numero % 10;
+    let tens = Math.floor((numero % 100) / 10);
+    let hundreds = Math.floor(numero / 100);
+    let unitsWord = '';
+    let tensWord = '';
+    let hundredsWord = '';
+
+    if (units == 1) {
+      unitsWord = 'one';
+    } else if (units == 2) {
+      unitsWord = 'two';
+    } else if (units == 3) {
+      unitsWord = 'three';
+    } else if (units == 4) {
+      unitsWord = 'four';
+    } else if (units == 5) {
+      unitsWord = 'five';
+    } else if (units == 6) {
+      unitsWord = 'six';
+    } else if (units == 7) {
+      unitsWord = 'seven';
+    } else if (units == 8) {
+      unitsWord = 'eight';
+    } else if (units == 9) {
+      unitsWord = 'nine';
+    }
+
+    if (tens == 2) {
+      tensWord = 'twenty';
+    } else if (tens == 3) {
+      tensWord = 'thirty';
+    } else if (tens == 4) {
+      tensWord = 'forty';
+    } else if (tens == 5) {
+      tensWord = 'fifty';
+    } else if (tens == 6) {
+      tensWord = 'sixty';
+    } else if (tens == 7) {
+      tensWord = 'seventy';
+    } else if (tens == 8) {
+      tensWord = 'eighty';
+    } else if (tens == 9) {
+      tensWord = 'ninety';
+    }
+
+    if (hundreds == 1) {
+      hundredsWord = 'one hundred';
+    } else if (hundreds == 2) {
+      hundredsWord = 'two hundred';
+    } else if (hundreds == 3) {
+      hundredsWord = 'three hundred';
+    } else if (hundreds == 4) {
+      hundredsWord = 'four hundred';
+    } else if (hundreds == 5) {
+      hundredsWord = 'five hundred';
+    } else if (hundreds == 6) {
+      hundredsWord = 'six hundred';
+    } else if (hundreds == 7) {
+      hundredsWord = 'seven hundred';
+    } else if (hundreds == 8) {
+      hundredsWord = 'eight hundred';
+    } else if (hundreds == 9) {
+      hundredsWord = 'nine hundred';
+    }
+
+    if (tens == 0 && units == 0) {
+      return hundredsWord;
+    } else if (tens == 0) {
+      return hundredsWord + ' and ' + unitsWord;
+    } else if (units == 0) {
+      return hundredsWord + ' and ' + tensWord;
+    } else {
+      return hundredsWord + ' and ' + tensWord + ' ' + unitsWord;
     }
   }
-  return contador;
 }
 
-console.log(contaLetras(numeroPorEscrito(5)));
+// retorna o número de letras utilizadas para escrever os números de 1 a 1000
+function contarLetras() {
+  let total = 0;
+  for (let i = 1; i <= limite; i++) {
+    let numero = escreveNumeroEmIngles(i);
+    let numeroSemEspacos = numero.replace(/ /g, '');
+    total += numeroSemEspacos.length;
+  }
+  return total;
+}
+
+console.log(contarLetras());
