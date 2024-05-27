@@ -8,7 +8,7 @@ Os nomes dos arquivos serão no formato "XXXX.js". Sendo 4 dígitos para o núme
 
 O arquivo 0000.js contem funções que utilizo em vários lugares. Para não ficar repetindo, coloquei nesse arquivo.
 
-# Situação dos problemas
+## Situação dos problemas
 
 | Problema | Situação     | Observações                         |
 | -------- | ------------ | ----------------------------------- |
